@@ -1,0 +1,339 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Softer background */
+    color: #333;  
+}
+
+/* Header Styles */
+header {
+    display: flex; /* Use flexbox for header layout */
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Center items vertically */
+    background: #333; /* Dark background for header */
+    color: #fff;
+    padding: 15px 20px;
+    position: sticky; /* Sticky header */
+    top: 0; /* Sticks to the top */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 0; /* Remove extra margin from nav */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Use flexbox for horizontal alignment */
+    margin: 0; /* Remove default margin */
+}
+
+nav ul li {
+    margin: 0 20px; /* Spacing between items */
+}
+
+nav a {
+    color: #fff; /* White text for links */
+    text-decoration: none; /* No underline */
+    padding: 10px 15px; /* Padding around the links */
+    border-radius: 5px; /* Rounded corners for buttons */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Add hover effect for links */
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+}
+
+/* Active Link Style */
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.5); /* Different color for active link */
+    color: #000; /* Change text color for active link */
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('your-hero-image.jpg'); /* Replace with your hero image */
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Taller hero section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative; /* Allows overlay to be positioned absolutely */
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    padding: 10px; /* Reduced padding to bring content closer */
+    margin-top: -115px;
+}
+
+/* Hero Text */
+.hero-text {
+    text-align: center; /* Center the text */
+    margin-top: 10px; /* Further reduced margin to bring it closer to the navbar */
+}
+
+/* Blog Posts Section */
+.blog-posts {
+    padding: 40px 20px; /* Increased padding for more whitespace */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em; /* Larger font size for titles */
+    margin-bottom: 20px;
+    margin-top: -140px;
+    font-family: 'Playfair Display', serif; /* Historic font */
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 10px; /* Reduced gap for better spacing */
+}
+
+/* Grid Item */
+.grid-item {
+    background-color: #fff; /* White background for items */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    transition: transform 0.3s ease;
+    padding: 10px;
+    text-align: center; /* Center text */
+    position: relative; /* Positioning context for the overlay */
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+/* Center specific images with a square aspect ratio */
+.grid-item img {
+    max-width: 100%; /* Responsive images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Round corners for images */
+    object-fit: cover; /* Cover ensures the image fills the area */
+}
+
+/* Center the specific square image (3rd image) */ 
+.grid-item:nth-child(3) img {
+    margin: auto; /* Center the image */
+}
+
+/* Hover Effect */
+.grid-item:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333; /* Darker footer */
+    color: white;
+    margin-top: 20px;
+}
+
+/* Animation for images on hover */
+.grid-item img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scale and shadow */
+}
+
+.grid-item img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+/* Fade-in effect for images */
+.grid-item {
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 0.5s forwards; /* Fade-in animation */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Move up slightly during fade-in */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+/* Delay animation for each grid item */
+.grid-item:nth-child(1) { animation-delay: 0.1s; }
+.grid-item:nth-child(2) { animation-delay: 0.2s; }
+.grid-item:nth-child(3) { animation-delay: 0.3s; }
+.grid-item:nth-child(4) { animation-delay: 0.4s; }
+.grid-item:nth-child(5) { animation-delay: 0.5s; }
+.grid-item:nth-child(6) { animation-delay: 0.6s; }
+.grid-item:nth-child(7) { animation-delay: 0.7s; }
+.grid-item:nth-child(8) { animation-delay: 0.8s; }
+.grid-item:nth-child(9) { animation-delay: 0.9s; }
+.grid-item:nth-child(10) { animation-delay: 1.0s; }
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background with transparency */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80vw; /* Use viewport width for responsiveness */
+    max-width: 700px; /* Limit the max width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.caption {
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 480px) { /* For small phones */
+    .modal-content {
+        width: 90vw; /* Wider on small screens */
+    }
+
+    .close {
+        font-size: 30px; /* Reduce close button size */
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) { /* For medium-sized devices (tablets) */
+    .modal-content {
+        width: 80vw; /* Adjust width for tablets */
+    }
+
+    .close {
+        font-size: 35px; /* Slightly reduce close button size */
+    }
+}
+
+@media (min-width: 769px) { /* For larger screens */
+    .modal-content {
+        width: 70vw; /* Adjust width for larger screens */
+    }
+}
+/* General caption style */
+.caption {
+    position: absolute; /* or relative based on your layout */
+    color: white; /* Example color */
+    text-align: center; /* Center the text */
+    z-index: 10; /* Ensure it appears above the image */
+}
+.bhairav-description {
+    top: 40vh; /* Center vertically */
+    left: 68vw; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the caption */
+    font-size: 3.25vh; /* Converted from 26px */
+    text-align: left;
+}
+
+.red-mustang-description {
+    top: 40vh;
+    left: 58vw;
+    transform: translate(-50%, -50%);
+    font-size: 3.25vh; /* Converted from 26px */
+    text-align: left;
+}
+
+.black-mustang-description {
+    top: 45vh;
+    left: 60vw;
+    transform: translate(-50%, -50%);
+    font-size: 3.5vh; /* Converted from 28px */
+    text-align: left;
+}
+
+.stupa-description {
+    top: 45vh;
+    left: 65vw;
+    font-size: 3.25vh; /* Converted from 26px */
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.kuttumath-description {
+    top: 45vh;
+    left: 70vw;
+    font-size: 3.5vh; /* Converted from 28px */
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.goats-description {
+    top: 45vh;
+    left: 68vw;
+    font-size: 3.25vh; /* Converted from 26px */
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.stucoo-description {
+    top: 40vh;
+    left: 58vw;
+    font-size: 3.25vh; /* Converted from 26px */
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.raddish-description {
+    top: 45vh;
+    left: 68vw;
+    font-size: 3.25vh; /* Converted from 26px */
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.bells-description {
+    top: 45vh;
+    left: 54vw;
+    font-size: 3.25vh; /* Converted from 26px */
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.matsyendra-nath-description {
+    top: 45vh;
+    left: 50vw;
+    font-size: 3.25vh; /* Converted from 26px */
+    transform: translate(-50%, -50%);
+    text-align: left;
+} 

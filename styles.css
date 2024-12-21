@@ -1,0 +1,463 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; 
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background: #333; 
+    color: #fff;
+    padding: 15px 20px;
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 0; 
+}
+
+nav ul {
+    display: none; /* Hide the regular menu */
+    flex-direction: column; /* Vertical list */
+    position: absolute; 
+    top: 100%; /* Position below the header */
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 10;
+}
+
+nav ul li {
+    margin: 0 20px; 
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.5); 
+    color: #000; 
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('your-hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative; 
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px; 
+    margin-top: -115px;
+}
+
+.hero-text {
+    text-align: center; 
+    margin-top: 10px; 
+}
+
+/* Blog Posts Section */
+.blog-posts {
+    padding: 40px 20px; 
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em; 
+    margin-bottom: 20px;
+    margin-top: -140px;
+    font-family: 'Playfair Display', serif; 
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px; 
+}
+
+.grid-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease;
+    padding: 10px;
+    text-align: center;
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.grid-item img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+    object-fit: cover;
+}
+
+.grid-item:nth-child(3) img {
+    margin: auto; 
+}
+
+.grid-item:hover {
+    transform: translateY(-3px); 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333; 
+    color: white;
+    margin-top: 20px;
+}
+
+.grid-item img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.grid-item img:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.grid-item {
+    opacity: 0; 
+    animation: fadeIn 0.5s forwards; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+
+.grid-item:nth-child(1) { animation-delay: 0.1s; }
+.grid-item:nth-child(2) { animation-delay: 0.2s; }
+.grid-item:nth-child(3) { animation-delay: 0.3s; }
+.grid-item:nth-child(4) { animation-delay: 0.4s; }
+.grid-item:nth-child(5) { animation-delay: 0.5s; }
+.grid-item:nth-child(6) { animation-delay: 0.6s; }
+.grid-item:nth-child(7) { animation-delay: 0.7s; }
+.grid-item:nth-child(8) { animation-delay: 0.8s; }
+.grid-item:nth-child(9) { animation-delay: 0.9s; }
+.grid-item:nth-child(10) { animation-delay: 1.0s; }
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80vw; 
+    max-width: 700px; 
+    height: auto; 
+}
+
+
+.caption {
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 18px; 
+    line-height: 1.4; 
+}
+
+
+.caption.bhairav {
+    font-size: 20px; 
+    color: yellow; 
+    position: absolute;
+    bottom: 10vh; 
+    left: 5vw; 
+}
+
+.caption.red-mustang {
+    font-size: 16px;
+    color: red;
+    position: absolute;
+    bottom: 12vh;
+    left: 6vw;
+}
+
+
+.caption.black-mustang {
+    font-size: 16px;
+    color: black;
+    position: absolute;
+    bottom: 10vh;
+    left: 6vw;
+}
+
+/* ... Add similar rules for the rest of the images ... */
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.caption {
+    position: absolute;
+    color: white;
+    z-index: 10;
+    text-align: center;
+}
+
+
+.bhairav-description {
+    top: 40vh; 
+    left: 68vw;
+    font-size: 3.25vh;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.red-mustang-description {
+    top: 40vh;
+    left: 58vw;
+    font-size: 3.25vh;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.black-mustang-description {
+    top: 45vh;
+    left: 60vw;
+    font-size: 3.5vh;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.stupa-description {
+    top: 45vh;
+    left: 65vw;
+    font-size: 3.25vh;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.kuttumath-description {
+    top: 45vh;
+    left: 70vw;
+    font-size: 3.5vh;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.goats-description {
+    top: 45vh;
+    left: 68vw;
+    font-size: 3.25vh;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.stucoo-description {
+    top: 40vh;
+    left: 58vw;
+    font-size: 3.25vh;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.raddish-description {
+    top: 45vh;
+    left: 68vw;
+    font-size: 3.25vh;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.bells-description {
+    top: 45vh;
+    left: 54vw;
+    font-size: 3.25vh;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.matsyendra-nath-description {
+    top: 45vh;
+    left: 50vw;
+    font-size: 3.25vh;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .bhairav-description,
+    .red-mustang-description,
+    .black-mustang-description,
+    .stupa-description,
+    .kuttumath-description,
+    .goats-description,
+    .stucco-description,
+    .raddish-description,
+    .bells-description,
+    .matsyendra-nath-description {
+        font-size: 4.5vh; 
+        left: 50vw; 
+        transform: translate(-50%, -50%);
+    }
+
+    .bhairav-description {
+        top: 30vh; 
+    }
+
+    .black-mustang-description,
+    .stupa-description,
+    .kuttumath-description,
+    .goats-description,
+    .stucco-description,
+    .raddish-description,
+    .bells-description,
+    .matsyendra-nath-description {
+        top: 35vh; 
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger-menu {
+        display: block; /* Show on small screens */
+        font-size: 24px; 
+        cursor: pointer;
+        align-self: center;
+
+    }
+
+    nav ul {
+        display: none; /* Hide the regular menu */
+        flex-direction: column; /* Vertical list */
+        position: absolute; 
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 10;
+    }
+
+    nav.open ul {
+        display: flex; /* Show the menu when open */
+        flex-direction: column; /* Make the menu items stack vertically */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Adjust spacing for vertical list */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .bhairav-description,
+    .red-mustang-description,
+    .black-mustang-description,
+    .stupa-description,
+    .kuttumath-description,
+    .goats-description,
+    .stucco-description,
+    .raddish-description,
+    .bells-description,
+    .matsyendra-nath-description {
+        font-size: 3.5vh; 
+    }
+
+    .bhairav-description {
+        top: 35vh; 
+    }
+
+    .black-mustang-description,
+    .stupa-description,
+    .kuttumath-description,
+    .goats-description,
+    .stucco-description,
+    .raddish-description,
+    .bells-description,
+    .matsyendra-nath-description {
+        top: 40vh; 
+    }
+}
+
+@media (min-width: 769px) {
+    .bhairav-description,
+    .red-mustang-description,
+    .black-mustang-description,
+    .stupa-description,
+    .kuttumath-description,
+    .goats-description,
+    .stucco-description,
+    .raddish-description,
+    .bells-description,
+    .matsyendra-nath-description {
+        font-size: 3vh; 
+    }
+
+    .hamburger-menu { 
+        display: none; /* Hide on larger screens */
+        margin-top: -10px;
+        align-self: center;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: flex; /* Show the regular menu on larger screens */
+        flex-direction: row; /* Ensure menu items are in a row */
+        position: static; /* Reset position */
+        width: auto; /* Reset width */
+        background-color: transparent; /* Reset background color */
+        z-index: 10;
+    }
+}   
